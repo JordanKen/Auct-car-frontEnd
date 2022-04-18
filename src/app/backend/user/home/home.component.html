@@ -1,0 +1,377 @@
+<!--<section id="home">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" >
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <img src="assets/img/image1.jpg" alt="first" class="item">
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/image2.jpg" alt="second" class="item">
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/image3.jpg" alt="third" class="item">
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/image4.jpg" alt="fourth" class="item">
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/image5.jpg" alt="fifth" class="item">
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="container p-5">
+    <app-message></app-message>
+    <p class="lead">
+      <b>Recommended Deals: Last-Minute Deals</b>
+    </p>
+    <div class="row">
+      <div *ngIf="!products" class="m-auto">
+        <h1 class="text-center display-3 mt-5">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <div *ngFor="let product of products" class="col-md-3 mb-5">
+        <a routerLink="/usrdb/product/{{ product.id }}">
+          <div class="card bg-light">
+            <img src="../../../../assets/img/{{ product.avatar }}" alt="product" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.price | currency }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>-->
+<section id="content">
+  <div class="width-wrapper width-wrapper__inset1">
+    <div class="wrapper1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+              <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom"
+                   role="tabpanel" aria-hidden="false">
+                <form id="bookingForm" class="bookingForm1 wow fadeIn animated" data-wow-duration="1s"
+                      data-wow-delay="0.1s"
+                      style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>Marque</label>
+                      <select type="text" name="name" class="form-control">
+                        <option>Any Make</option>
+                        <option>Any Make 1</option>
+                        <option>Any Make 2</option>
+                        <option>Any Make 3</option>
+                        <option>Any Make 4</option>
+                        <option>Any Make 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-12">
+                      <label>Gabarit</label>
+                      <select type="text" name="name" class="form-control">
+                        <option>Any Make</option>
+                        <option>Any Make 1</option>
+                        <option>Any Make 2</option>
+                        <option>Any Make 3</option>
+                        <option>Any Make 4</option>
+                        <option>Any Make 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-12">
+                      <label>Garage</label>
+                      <select type="text" name="name" class="form-control">
+                        <option>Any Make</option>
+                        <option>Any Make 1</option>
+                        <option>Any Make 2</option>
+                        <option>Any Make 3</option>
+                        <option>Any Make 4</option>
+                        <option>Any Make 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Année Min</label>
+                      <select type="text" name="name" class="form-control">
+                        <option>Any Make</option>
+                        <option>Any Make 1</option>
+                        <option>Any Make 2</option>
+                        <option>Any Make 3</option>
+                        <option>Any Make 4</option>
+                        <option>Any Make 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Année Max</label>
+                      <select type="text" name="name" class="form-control">
+                        <option>Any Make</option>
+                        <option>Any Make 1</option>
+                        <option>Any Make 2</option>
+                        <option>Any Make 3</option>
+                        <option>Any Make 4</option>
+                        <option>Any Make 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Prix Min</label>
+                      <input type="number" name="email" value="" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Prix Max</label>
+                      <input type="number" name="email" value="" class="form-control">
+                    </div>
+                  </div>
+                  <a href="#" class="btn-big" data-type="submit">Find a car</a>
+                  <a href="#" class="simple">Detailed Search</a>
+                </form>
+              </div>
+            </div>
+            <div class="banner1">
+              <h2 class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                  style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                <a href="#">About our Services</a>
+              </h2>
+              <p class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s"
+                 style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+            </div>
+            <div class="post1">
+              <h2 class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                  style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                Latest REVIEWS</h2>
+              <img class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" src="images/page1_img1.png"
+                   alt=""
+                   style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+              <time class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.3s" datetime="2014-01-01"
+                    style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
+                Monday, June 24, 2013
+              </time>
+              <h3 class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.4s"
+                  style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
+                <a href="#">Lorem ipsum dolor sit amet conse</a>
+              </h3>
+              <p class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                 style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip.</p>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="slider-wrapper" style="height: auto;">
+              <div id="camera_wrap" class="camera_wrap" style="display: block; margin-bottom: 0px; height: 460px;">
+                <div class="camera_fakehover">
+                  <div class="camera_src camerastarted paused">
+                    <div data-src="images/slider1.png">
+
+                    </div>
+                    <div data-src="images/slider2.png">
+
+                    </div>
+                    <div data-src="images/slider3.png">
+
+                    </div>
+                    <div data-src="images/slider4.png">
+                      <div class="caption fadeIn" style="visibility: hidden;">
+                        <div class="heading">
+                          <span class="first">2014 Cadillac</span>
+                          <span class="second">Escalade <span class="price">$149999</span></span>
+                        </div>
+                        <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                             style="visibility: hidden; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                      <span class="first">
+                        Mileage: <strong>130 000</strong> km
+                      </span>
+                          <span class="second">
+                        Volume capacity: <strong>1.3</strong>l
+                      </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-src="images/slider5.png">
+                      <div class="caption fadeIn" style="visibility: hidden;">
+                        <div class="heading">
+                          <span class="first">2014 Lexus</span>
+                          <span class="second">IS 350 F Sport <span class="price">$49999</span></span>
+                        </div>
+                        <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                             style="visibility: hidden; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                      <span class="first">
+                        Mileage: <strong>130 000</strong> km
+                      </span>
+                          <span class="second">
+                        Volume capacity: <strong>1.3</strong>l
+                      </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="camera_target">
+                    <div class="cameraCont">
+                      <div class="cameraSlide cameraSlide_0" style="visibility: visible; display: none; z-index: 1;">
+                        <img src="../../../../assets/images/slider1.jpeg" class="imgLoaded"
+                             style="visibility: visible; height: 460px; margin-left: 0px; margin-top: 0px; position: absolute; width: 870px;"
+                             data-alignment="" data-portrait="" width="870" height="460">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                      <div class="cameraSlide cameraSlide_1" style="display: none; z-index: 1;"><img
+                        src="../../../../assets/images/slider2.jpeg" class="imgLoaded"
+                        style="visibility: visible; height: 460px; margin-left: 0px; margin-top: 0px; position: absolute; width: 870px;"
+                        data-alignment="" data-portrait="" width="870" height="460">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                      <div class="cameraSlide cameraSlide_2 cameracurrent" style="display: block; z-index: 999;"><img
+                        src="../../../../assets/images/slider3.jpeg" class="imgLoaded"
+                        style="visibility: visible; height: 460px; margin-left: 0px; margin-top: 0px; position: absolute; width: 870px;"
+                        data-alignment="" data-portrait="" width="870" height="460">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                      <div class="cameraSlide cameraSlide_3 cameranext" style="display: none;"><img
+                        src="../../../../assets/images/slider4.jpeg" class="imgLoaded"
+                        style="visibility: visible; height: 460px; margin-left: 0px; margin-top: 0px; position: absolute; width: 870px;"
+                        data-alignment="" data-portrait="" width="870" height="460">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                      <div class="cameraSlide cameraSlide_4">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                      <div class="cameraSlide cameraSlide_5" style="z-index: 1; display: none;">
+                        <div class="camerarelative" style="width: 870px; height: 460px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="camera_overlayer"></div>
+                  <div class="camera_target_content">
+                    <div class="cameraContents">
+                      <div class="cameraContent" style="display: none;">
+                        <div class="caption fadeIn" style="visibility: hidden; opacity: 1;">
+                          <div class="heading">
+                            <span class="first">2014 Mercedes-Benz</span>
+                            <span class="second">GLK-Class <span class="price">$89999</span></span>
+                          </div>
+                          <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                               style="visibility: hidden; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn; opacity: 1;">
+                      <span class="first">
+                        Mileage: <strong>130 000</strong> km
+                      </span>
+                            <span class="second">
+                        Volume capacity: <strong>1.3</strong>l
+                      </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cameraContent" style="display: none;">
+                        <div class="caption fadeIn" style="visibility: hidden; opacity: 1;">
+                          <div class="heading">
+                            <span class="first">2014 Lexus</span>
+                            <span class="second">GX 460 <span class="price">$89999</span></span>
+                          </div>
+                          <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                               style="visibility: hidden; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn; opacity: 1;">
+                      <span class="first">
+                        Mileage: <strong>130 000</strong> km
+                      </span>
+                            <span class="second">
+                        Volume capacity: <strong>1.3</strong>l
+                      </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cameraContent cameracurrent" style="display: block;">
+                        <div class="caption fadeIn" style="visibility: visible; opacity: 1;">
+                          <div class="heading">
+                            <span class="first">2014 Lexus</span>
+                            <span class="second">LF-NX Hybrid <span class="price">$89999</span></span>
+                          </div>
+                          <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                               style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn; opacity: 1;">
+                      <span class="first">
+                        Mileage: <strong>130 000</strong> km
+                      </span>
+                            <span class="second">
+                        Volume capacity: <strong>1.3</strong>l
+                      </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cameraContent"></div>
+                      <div class="cameraContent"></div>
+                    </div>
+                  </div>
+                  <div class="camera_bar" style="display: none; top: auto; height: 7px;"><span class="camera_bar_cont"
+                                                                                               style="opacity: 0.8; position: absolute; inset: 0px; background-color: rgb(34, 34, 34);"><span
+                    id="pie_0"
+                    style="opacity: 0.8; position: absolute; background-color: rgb(238, 238, 238); inset: 2px 0px; display: none;"></span></span>
+                  </div>
+                  <div class="camera_commands">
+                    <div class="camera_play" style="display: block;"></div>
+                    <div class="camera_stop" style="display: none;"></div>
+                  </div>
+                </div>
+                <div class="camera_pag">
+                  <ul class="camera_pag_ul">
+                    <li class="pag_nav_0" style="position:relative; z-index:1002"><span><span>0</span></span></li>
+                    <li class="pag_nav_1" style="position:relative; z-index:1002"><span><span>1</span></span></li>
+                    <li class="pag_nav_2 cameracurrent" style="position:relative; z-index:1002">
+                      <span><span>2</span></span></li>
+                    <li class="pag_nav_3" style="position:relative; z-index:1002"><span><span>3</span></span></li>
+                    <li class="pag_nav_4" style="position:relative; z-index:1002"><span><span>4</span></span></li>
+                  </ul>
+                </div>
+                <div class="camera_loader" style="display: none; visibility: visible;"></div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="wrapper2">
+              <div class="heading1 wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                   style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                <h2>Latest cars</h2>
+              </div>
+              <div class="border-wrapper1 wrapper3">
+                <div class="row">
+                  <div *ngFor="let table of products" class="col-md-4">
+                    <div class="box1">
+                      <h4 class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                          style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                        <a href="#">
+                          <ngb-highlight [result]="table.name"></ngb-highlight>
+                        </a>
+                      </h4>
+                      <img class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s"
+                           [src]=api+table.avatar alt=""
+                           style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                      <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                           style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                        <span class="first">Mileage: <span class="highlighted"><ngb-highlight
+                          [result]="table.mileage"></ngb-highlight>km</span></span>
+                        <span class="second">Volume capacity: <span class="highlighted">1.3l</span></span>
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="info2 wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".3s"
+                           style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
+                        <div class="price">
+                          <span class="first">Price:</span>
+                          <span class="second"><ngb-highlight [result]="table.price"></ngb-highlight>FCFA</span>
+                        </div>
+                        <a class="btn-default" routerLink="/product/{{table.id}}">
+                          <span>Details</span>
+                        </a>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

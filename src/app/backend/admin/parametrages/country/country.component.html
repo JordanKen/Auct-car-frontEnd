@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <app-page-title title="Pages des marchands" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Table des marchands</h4>
+          <p class="text-muted font-13 mb-4">
+            <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ajouter un utilisateur</button>
+          </p>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Ajouter un utilisateur</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="userForm" name="formG">
+                <div class="form-group">
+                  <label for="name">Nom complet</label>
+                  <div class="input-group">
+                    <input id="name" formControlName="name" type="text" class="form-control" placeholder="Nom complet">
+                  </div>
+                  <label>Nom d'utilisateur</label>
+                  <div class="input-group">
+                    <input id="openHour" formControlName="surname" type="text" class="form-control" placeholder="Nom d'utilisateur">
+                  </div>
+                  <label>Age</label>
+                  <div class="input-group">
+                    <input formControlName="age" id="lockHour" type="number" class="form-control" placeholder="age">
+                  </div>
+                  <label>Email</label>
+                  <div class="input-group">
+                    <input formControlName="email" id="description" type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <label>Telephone</label>
+                  <div class="input-group">
+                    <input formControlName="telephone"  type="text" class="form-control" placeholder="Numéro de téléphone">
+                  </div>
+                  <label>Sexe</label>
+                  <div class="input-group">
+                    <ng-select formControlName="sexe" class="form-control">
+                      <ng-option value="masculin">masculin</ng-option>
+                      <ng-option value="feminin">feminin</ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Statut</label>
+                  <div class="input-group">
+                    <ng-select formControlName="isAdmin" class="form-control">
+                      <ng-option value="0">utilisateur</ng-option>
+                      <ng-option value="1">administrateur</ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Avatar</label>
+                  <div class="input-group">
+                    <input formControlName="avatar"  type="file" class="form-control">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark"  (click)="save()">Save</button>
+            </div>
+          </ng-template>
+          <div class="row mb-md-2">
+            <!-- Search -->
+            <div class="col-sm-12 col-md-6">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                class="d-inline-flex align-items-center">Search:
+                <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                       aria-controls="tickets-table"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <table id="basic-datatable" class="table datatables dt-responsive nowrap">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Age</th>
+              <th>Email</th>
+              <th>Telephone</th>
+              <th>Sexe</th>
+              <th>Status</th>
+              <th>Avatar</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr tr *ngFor="let table of tableData">
+              <td>
+                <ngb-highlight [result]="table.id" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.name" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.surname" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.age" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.email" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.telephone" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.sexe"></ngb-highlight>>
+              </td>
+              <td>
+                <p *ngIf="table.isAdmin=='1';" >administrateur</p>
+                <p *ngIf="table.isAdmin=='0';" >utilisateur</p>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.avatar" ></ngb-highlight>>
+              </td>
+              <td>
+                <i class="uil uil-edit-alt font-size-14" ></i>Edit
+                <i class="uil uil-multiply font-size-14" ></i>Delete
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

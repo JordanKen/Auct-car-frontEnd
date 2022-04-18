@@ -1,0 +1,216 @@
+<section id="content">
+    <div class="width-wrapper width-wrapper__inset1">
+      <div class="wrapper1">
+        <div class="container">
+          <div *ngIf="!enchere" class="m-auto">
+            <h1 class="text-center display-3 mt-5">
+              <i class="fa fa-spinner fa-spin"></i>
+            </h1>
+          </div>
+          <div *ngIf="enchere">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="slider-wrapper" style="height: auto;">
+                  <img src="{{api + vehicule.avatar}}"/>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="wrapper2">
+                  <div class="heading1 wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                       style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <div class="row p-4"*ngIf="!isPassed; else passed">
+                      <div class="col-md-6"><p style="font-size: x-small">Enchère courante</p></div>
+                      <div class="col-md-6"><p style="font-size: x-small" *ngIf="isNow; else later">Temps restant:</p>
+                        <ng-template style="font-size: x-small" #later>
+                          Débute dans:
+                        </ng-template>
+                      </div>
+                      <div class="col-md-6" *ngIf="!isPassed"><p style="font-size: xx-large;font-weight: bold">{{enchere.finalPrice}}XAF</p></div>
+                      <div class="col-md-6">
+                        <div class="w-sm-60" *ngIf="!isPassed">
+                          <div class="js-countdown row mx-n2 mb-3" data-hs-countdown-options="{
+                     &quot;endDate&quot;: &quot;2020/11/30&quot;,
+                     &quot;yearsFormat&quot;: &quot;%Y&quot;,
+                     &quot;monthsFormat&quot;: &quot;%M&quot;,
+                     &quot;daysFormat&quot;: &quot;%D&quot;,
+                     &quot;hoursFormat&quot;: &quot;%H&quot;,
+                     &quot;minutesFormat&quot;: &quot;%M&quot;,
+                     &quot;secondsFormat&quot;: &quot;%S&quot;
+                   }">
+                            <div class="col-3 text-center px-2">
+                              <div class="border border-dark rounded p-2 mb-1">
+                                <span class="js-cd-days d-block text-dark font-size-2 font-weight-bold">{{daysToDday}}</span>
+                              </div>
+                              <span class="d-block text-dark">Jour(s)</span>
+                            </div>
+                            <div class="col-3 text-center px-2">
+                              <div class="border border-dark rounded p-2 mb-1">
+                                <span class="js-cd-hours d-block text-dark font-size-2 font-weight-bold">{{hoursToDday}}</span>
+                              </div>
+                              <span class="d-block text-dark">Heure(s)</span>
+                            </div>
+                            <div class="col-3 text-center px-2">
+                              <div class="border border-dark rounded p-2 mb-1">
+                                <span class="js-cd-minutes d-block text-dark font-size-2 font-weight-bold">{{minutesToDday}}</span>
+                              </div>
+                              <span class="d-block text-dark">Minute(s)</span>
+                            </div>
+                            <div class="col-3 text-center px-2">
+                              <div class="border border-dark rounded p-2 mb-1">
+                                <span class="js-cd-minutes d-block text-dark font-size-2 font-weight-bold">{{secondsToDday}}</span>
+                              </div>
+                              <span class="d-block text-dark">Séconde(s)</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="nav nav-pills" role="tablist">
+                          <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link" data-toggle="tab" href="#home-1" role="tab" aria-selected="false">
+                              <i class="dripicons-home mr-1 align-middle"></i> <span class="d-none d-md-inline-block">Rapport</span>
+                            </a>
+                          </li>
+                          <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link" data-toggle="tab" href="#profile-1" role="tab" aria-selected="false">
+                              <i class="dripicons-user mr-1 align-middle"></i> <span class="d-none d-md-inline-block">Garage</span>
+                            </a>
+                          </li>
+                          <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link" data-toggle="tab" href="#messages-1" role="tab" aria-selected="false">
+                              <i class="dripicons-mail mr-1 align-middle"></i> <span class="d-none d-md-inline-block">Marque</span>
+                            </a>
+                          </li>
+                          <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link active" data-toggle="tab" href="#settings-1" role="tab" aria-selected="true">
+                              <i class="dripicons-gear mr-1 align-middle"></i> <span class="d-none d-md-inline-block">Gabarit</span>
+                            </a>
+                          </li>
+                        </ul>
+
+
+                        <div class="tab-content p-3">
+                          <div class="tab-pane" id="home-1" role="tabpanel">
+                            <table class="table table-striped">
+                              <tbody>
+                              <tr>
+                                <th scope="row">Moteur</th>
+                                <td>Très bon état</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Transmission</th>
+                                <td>Automatique</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Mileage</th>
+                                <td>{{vehicule.mileage}}Km</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Year of manufacture</th>
+                                <td>{{vehicule.manufacturateYear}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Couleur</th>
+                                <td>grise</td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="tab-pane" id="profile-1" role="tabpanel">
+                            <p>{{vehicule.marque.name}}</p>
+                          </div>
+                          <div class="tab-pane" id="messages-1" role="tabpanel">
+                            {{vehicule.gabarit.name}}
+                          </div>
+                          <div class="tab-pane active" id="settings-1" role="tabpanel">
+                            {{vehicule.garage.name}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <table class="table table-striped">
+                          <tbody>
+                          <tr>
+                            <th scope="row">Avensis</th>
+                            <td>Toyota</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Marque</th>
+                            <td>Toyota</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Kilométrage</th>
+                            <td>76000KM</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Année de fabrication</th>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Couleur</th>
+                            <td>grise</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row p-4">
+                      <ng-template style="font-size: x-small" #passed>
+                        <h2 style="color: #c82333">Vente achevée!!</h2>
+                      </ng-template>
+                    </div>
+                  </div>
+                  <div class="border-wrapper1 wrapper3">
+                    <div class="row">
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-3">
+                <div class="border-wrapper1 p-3" style="border: 1px solid #e3e3e3;">
+                  <form id="bookingForm" class="bookingForm1 wow fadeIn animated" data-wow-duration="1s" [formGroup]="propositionForm"
+                        data-wow-delay="0.1s"
+                        style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="border-wrapper1 m-2" *ngIf="!isPassed; else passe">
+                          <h2 style="color: #68a617;font-weight: bold">ACTIF</h2>
+                        </div>
+                        <ng-template #passe>
+                          <h2 style="color: red;font-weight: bold">PASSEE</h2>
+                        </ng-template>
+                      </div>
+                      <div class="col-md-12">
+                        <h3 style="font-weight: bold">{{enchere.finalPrice}}XAF</h3>
+                        <p style="font-size: x-small">Auction history</p>
+                      </div>
+                      <div class="col-md-12">
+                        <mat-nav-list>
+                          <mat-list-item *ngFor="let item of propositions">
+                            <mat-icon><img [src]=api+item.user.avatar></mat-icon>
+                            <h3 matLine> {{propositions.indexOf(item) + 1}} </h3>
+                            <h3 matLine> {{item.amount}}XAF </h3>
+                          </mat-list-item>
+                        </mat-nav-list>
+                      </div>
+                      <div class="col-md-12">
+                        <input type="number" placeholder="Minimum 10.000XAF" formControlName="amount">
+                      </div>
+                      <div class="col-md-12 mt-2">
+                        <button class="btn btn-primary w-100" type="submit" (click)="saveProposition()" [disabled]="!isNow">Encherir</button>
+                      </div>
+                      <div class="col-md-12 mt-2">
+                        <button class="btn btn-danger w-100" type="submit" (click)="addProposition()" [disabled]="!isNow">ENCHERIR +10000XAF</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

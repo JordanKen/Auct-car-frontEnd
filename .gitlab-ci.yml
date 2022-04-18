@@ -1,0 +1,40 @@
+image: trion/ng-cli-karma
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+ - apt-get update -qq && apt-get install -y -qq sshpass
+
+deploy_stage:
+  stage: deploy
+  environment: Staging
+  only:
+    - master
+  script:
+    - rm ./package-lock.json
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng build
+    - cd dist/
+    - ls
+    - sshpass -V
+    - export SSHPASS=$USER_PASS
+    - sshpass -e scp -P 65002  -o stricthostkeychecking=no -r . u546231501@185.224.138.175:/home/u546231501/domains/nusyce.com/public_html/nupay
+
+deploy_production:
+  stage: deploy
+  environment: Production
+  only:
+    - tags
+  script:
+    - rm ./package-lock.json
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng test --progress false  --watch=false
+    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
+    - ./node_modules/@angular/cli/bin/ng build --progress false --prod
+    - cd dist/
+    - ls
+    - sshpass -V
+    - export SSHPASS=$USER_PASS
+    - sshpass -e scp -o stricthostkeychecking=no -r  . -p 65002 u546231501@185.224.138.175:/home/u546231501/domains/nusyce.com/public_html/nupay

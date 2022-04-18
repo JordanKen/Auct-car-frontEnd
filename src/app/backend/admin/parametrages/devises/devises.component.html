@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <app-page-title title="Pages des marchands" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Table des véhicules</h4>
+          <p class="text-muted font-13 mb-4">
+            <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ajouter un véhicule</button>
+          </p>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Ajouter un véhicule</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="userForm" name="formG">
+                <div class="form-group">
+                  <label for="name">Nom Véhicule</label>
+                  <div class="input-group">
+                    <input id="name" formControlName="name" type="text" class="form-control" placeholder="Nom véhcule">
+                  </div>
+                  <label>Année de fabrication</label>
+                  <div class="input-group">
+                    <input formControlName="manufacturateYear" id="lockHour" type="number" class="form-control" placeholder="Date de fabrication">
+                  </div>
+                  <label>Kilométrage</label>
+                  <div class="input-group">
+                    <input formControlName="mileage" id="description" type="number" class="form-control" placeholder="Kilométrage">
+                  </div>
+                  <label>Prix de vente</label>
+                  <div class="input-group">
+                    <input formControlName="price"  type="number" class="form-control" placeholder="Prix de vente">
+                  </div>
+                  <label>Couleur</label>
+                  <div class="input-group">
+                    <input formControlName="color"  type="text" class="form-control" placeholder="Couleur">
+                  </div>
+                  <label>Gabarit</label>
+                  <div class="input-group">
+                    <ng-select formControlName="gabarit" class="form-control" bindLabel="name">
+                      <ng-option [value]="item.id" *ngFor="let item of gabaries">
+                        {{item.name}}
+                      </ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Marque</label>
+                  <div class="input-group">
+                    <ng-select formControlName="marque" class="form-control" bindLabel="name">
+                      <ng-option [value]="item.id" *ngFor="let item of marques">
+                        {{item.name}}
+                      </ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Garage</label>
+                  <div class="input-group">
+                    <ng-select formControlName="garage" class="form-control" bindLabel="name">
+                      <ng-option [value]="item.id" *ngFor="let item of garages">
+                        {{item.name}}
+                      </ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Utilisateur</label>
+                  <div class="input-group">
+                    <ng-select searchable bindLabel="name" formControlName="userId" class="form-control">
+                      <ng-option [value]="item.id" *ngFor="let item of users">
+                        {{item.name}}
+                      </ng-option>
+                    </ng-select>
+                  </div>
+                  <label>Avatar</label>
+                  <div class="input-group">
+                    <input formControlName="avatar"  type="file" (change)="handleFileInput($event.target.files)" class="form-control">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark"  (click)="save()">Save</button>
+            </div>
+          </ng-template>
+          <div class="row mb-md-2">
+            <!-- Search -->
+            <div class="col-sm-12 col-md-6">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                class="d-inline-flex align-items-center">Search:
+                <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                       aria-controls="tickets-table"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <table id="basic-datatable" class="table datatables dt-responsive nowrap">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom véhicule</th>
+              <th>Marque véhicule</th>
+              <th>Année de fabrication</th>
+              <th>Kilométrage</th>
+              <th>Prix</th>
+              <th>Nom Propriétaire</th>
+              <th>Avatar</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr tr *ngFor="let table of tableData">
+              <td>
+                <ngb-highlight [result]="table.id" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.name" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table?.marque?.name" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.manufacturateYear" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.mileage" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.price" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table?.user?.name"></ngb-highlight>
+              </td>
+              <td>
+                <img [src]= api+table.avatar height="50">
+              </td>
+              <td>
+                <i class="uil uil-edit-alt font-size-14" ></i>Edit
+                <i class="uil uil-multiply font-size-14" ></i>Delete
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

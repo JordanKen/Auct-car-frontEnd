@@ -1,0 +1,182 @@
+<section>
+  <div class="container-fluid p-5">
+    <div class="row">
+      <div class="col-md-10 text-center">
+        <ul class="nav nav-tabs justify-content-center">
+          <li class="nav-item active"><a href="#home" data-toggle="tab">User Profile</a></li>
+          <li class="nav-item"><a href="#profile" data-toggle="tab">My Vehicule</a></li>
+          <li class="nav-item"><a href="#messages" data-toggle="tab">My Wallet</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active wrapper bg-white mt-sm-5" id="home">
+            <h4 class="pb-4 border-bottom">Account settings</h4>
+            <form [formGroup]="userForm">
+              <div class="d-flex align-items-start py-3 border-bottom"><img [src]="imgURL" onerror="this.src='../../../../../assets/images/user.png'" class="img" alt="">
+                <div class="pl-sm-4 pl-2" id="img-section"><b>Avatar</b>
+                  <p>Accepted file type .png. Less than 1MB</p>
+                  <input type="file" (change)="handleFileInput($event.target.files)" formControlName="avatar"
+                         class="btn button border"><b>Upload</b>
+                </div>
+              </div>
+              <div class="py-2">
+                <div class="row py-2">
+                  <div class="col-md-5"><label>Nom complet</label> <input type="text" formControlName="name"
+                                                                          class="bg-light form-control"
+                  ></div>
+                  <div class="col-md-5 ml-3 pt-md-0 pt-3"><label>Nom d'utilisateur</label> <input type="text"
+                                                                                                  formControlName="surname"
+                                                                                                  class="bg-light form-control">
+                  </div>
+                </div>
+                <div class="row py-2">
+                  <div class="col-md-5"><label>Email Adresse</label> <input type="email" formControlName="email"
+                                                                            class="bg-light form-control"></div>
+                  <div class="col-md-5 ml-3 pt-md-0 pt-3"><label>Telephone</label> <input type="tel"
+                                                                                          formControlName="telephone"
+                                                                                          class="bg-light form-control">
+                  </div>
+                </div>
+                <div class="row py-2">
+                  <div class="col-md-5"><label>Age</label> <input type="number" class="bg-light form-control"
+                                                                  formControlName="age"></div>
+                  <div class="col-md-5 ml-3 pt-md-0 pt-3"><label>Sexe</label>
+                    <select name="country" id="sexe" class="bg-light form-control" formControlName="sexe">
+                      <option value="masculin">masculin</option>
+                      <option value="feminin">feminin</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-10 py-3 pb-4 border-bottom">
+                      <button (click)="updateUserFunc()" class="btn btn-primary mr-3">Save Changes</button>
+                      <button type="reset" class="btn border button">Cancel</button>
+                    </div>
+                    <div class="col-md-10 d-sm-flex align-items-center pt-3" id="deactivate">
+                      <div><b>Deactivate your account</b>
+                        <p>Details about your company account and password</p>
+                      </div>
+                      <div class="ml-auto">
+                        <button class="btn danger">Deactivate</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+
+          <ngx-payunit></ngx-payunit>
+          <div class="tab-pane wrappere mt-sm-5" id="profile">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let table of products" class="col-md-4 m-1">
+                  <div class="box1">
+                    <h4 class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s"
+                        style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+                      <a href="#">
+                        <ngb-highlight [result]="table.name"></ngb-highlight>
+                      </a>
+                    </h4>
+                    <img class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s"
+                         [src]=api+table.avatar alt=""
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                        <span class="first">Mileage: <span class="highlighted"><ngb-highlight
+                          [result]="table.mileage"></ngb-highlight>km</span></span>
+                      <span class="second">Volume capacity: <span class="highlighted">1.3l</span></span>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="info2 wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".3s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
+                      <div class="price">
+                        <span class="first">Price:</span>
+                        <span class="second"><ngb-highlight [result]="table.price"></ngb-highlight>FCFA</span>
+                      </div>
+                      <a class="btn-default" routerLink="/product/{{table.id}}">
+                        <span>Details</span>
+                      </a>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane wrapper bg-white mt-sm-5" id="messages">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body p-0">
+                    <h5 class="border-bottom">Mon portefeuille</h5>
+                    <!-- Overview data -->
+                    <app-overview value='{{amount}}' icon='users' title="Solde"
+                                  classNames="px-3 py-4">
+                    </app-overview>
+                    <div class="card">
+                      <p class="text-muted font-13 mb-4">
+                        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Recharger mon compte
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <ng-template #content let-modal class="m-4">
+                          <div class="modal-header">
+                            <h4 class="modal-title m-4" id="modal-basic-title">Fill Account</h4>
+                            <button type="button" class="close" aria-label="Close"
+                                    (click)="modal.dismiss('Cross click')">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body m-4">
+                            <form [formGroup]="walletForm" name="formG">
+                              <div class="form-group">
+                                <label for="name">Amount</label>
+                                <div class="input-group">
+                                  <input id="name" formControlName="amount" type="number" class="form-control"
+                                         placeholder="Montant">
+                                </div>
+                                <div class="input-group">
+                                  <input formControlName="user_id" type="hidden">
+                                </div>
+
+                              </div>
+                            </form>
+                            <div class="row mt-2">
+                              <div class="col-md-3 mr-2">
+                                <img src="../../../../../assets/images/momo.jpg" height="80" width="100">
+                              </div>
+                              <div class="col-md-3 mr-2">
+                                <img src="../../../../../assets/images/orange.png" height="80" width="100">
+                              </div>
+                              <div class="col-md-3 mr-2">
+                                <img src="../../../../../assets/images/visa.png" height="80" width="100">
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="modal-footer m-4">
+                            <button type="button" class="btn btn-primary p-2" (click)="fillWallet()">Save</button>
+                          </div>
+
+                        </ng-template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

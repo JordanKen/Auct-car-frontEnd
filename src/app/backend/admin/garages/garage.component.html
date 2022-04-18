@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <app-page-title title="Pages des marchands" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Table des marchands</h4>
+          <p class="text-muted font-13 mb-4">
+            <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ajouter un garage</button>
+          </p>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Add Garage</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="garageForm" name="formG">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <div class="input-group">
+                    <input id="name" formControlName="name" type="text" class="form-control" placeholder="garage name">
+                  </div>
+                  <label>Open Hour</label>
+                  <div class="input-group">
+                    <input id="openHour" formControlName="openHour" type="time" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                  </div>
+                  <label>Lock Hour</label>
+                  <div class="input-group">
+                    <input formControlName="lockHour" id="lockHour" type="time" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                  </div>
+                  <label>Description</label>
+                  <div class="input-group">
+                    <input formControlName="description" id="description" type="" class="form-control" placeholder="description">
+                  </div>
+                  <label>Avatar</label>
+                  <div class="input-group">
+                    <input formControlName="avatar" type="file" id="avatar" class="form-control" (change)="handleFileInput($event.target.files)">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark"  (click)="save()">Save</button>
+            </div>
+          </ng-template>
+          <div class="row mb-md-2">
+            <!-- Search -->
+            <div class="col-sm-12 col-md-6">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                class="d-inline-flex align-items-center">Search:
+                <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                       aria-controls="tickets-table"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <table id="basic-datatable" class="table datatables dt-responsive nowrap">
+            <thead>
+            <tr>
+              <th sortable="id">Id</th>
+              <th sortable="name">Name</th>
+              <th sortable="openHour" >Open Hour</th>
+              <th sortable="lockHour" >Lock Hour</th>
+              <th sortable="description">Description</th>
+              <th sortable="avatar">Avatar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr tr *ngFor="let table of tableData">
+              <td>
+                <ngb-highlight [result]="table.id" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.name" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.openHour" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.lockHour" ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="table.description" ></ngb-highlight>
+              </td>
+              <td>
+                <img [src]=api+table.avatar height="50">
+              </td>
+              <td>
+                <i class="uil uil-edit-alt font-size-14" ></i>Edit
+                <i class="uil uil-multiply font-size-14" ></i>Delete
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

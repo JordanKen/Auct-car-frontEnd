@@ -1,0 +1,38 @@
+const tableData = [
+  {
+    id: 1,
+    user_id: 2,
+    transaction_state_id: 1,
+    deposit_method_id: 1,
+    gross: 3,
+    fee: 200,
+    net: 1500,
+    transaction_receipt: 'fgfgfgf',
+    json_data: '',
+    created_at: '31/11/2020',
+    updated_at: '31/11/2020',
+    currency_id: 3,
+    currency_symbol: '$',
+    wallet_id: 2,
+    message: 'string',
+  },
+  {
+    id: 1,
+    user_id: 2,
+    transaction_state_id: 1,
+    deposit_method_id: 1,
+    gross: 3,
+    fee: 200,
+    net: 1500,
+    transaction_receipt: 'fgfgfgf',
+    json_data: '',
+    created_at: '31/11/2020',
+    updated_at: '31/11/2020',
+    currency_id: 2,
+    currency_symbol: '$',
+    wallet_id: 2,
+    message: 'string',
+  },
+];
+
+export { tableData };

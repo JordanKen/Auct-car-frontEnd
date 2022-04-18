@@ -1,0 +1,202 @@
+<header id="header">
+  <div class="info wow fadeIn animated" data-wow-duration="1s" data-wow-delay=".2s"
+       style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+    <div class="width-wrapper">
+      <h1>
+        <a href="index.html">
+          <span class="wrapper"><i class="fa fa-car"></i><strong>Auct</strong>car</span>
+        </a>
+      </h1>
+      <div class="authorization-block">
+        <div class="authorization">
+          <a  routerLink="/profile">
+            <i  class="fa fa-user-circle mr-1" aria-hidden="true"></i> Profile
+          </a>
+        <a routerLink="/cart" routerLinkActive="active">
+          <i class="fa fa-shopping-cart mr-1"></i>
+          Cart
+          <span *ngIf="data.cartItems" class="badge badge-warning ml-1">{{ data.cartItems }}</span>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div id="stuck_container">
+    <div class="width-wrapper">
+      <nav>
+        <ul class="sf-menu sf-js-enabled sf-arrows">
+          <li><a href="#" routerLink="">Home</a></li>
+          <li><a routerLink="/find-car" class="sf-with-ul">Find a car</a>
+          </li>
+          <li><a routerLink="/encheres">Ours bids</a></li>
+          <li><a href="#" routerLink="/categories">Brands</a></li>
+          <li><a href="#" routerLink="/garages">Garages</a></li>
+          <li><a href="#" routerLink="/contact">Contact Us</a></li>
+        </ul>
+        <select class="select-menu sf-menu sf-js-enabled sf-arrows" style="display: inline-block;">
+          <option value="#">Navigate to...</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index.html">&nbsp;Home</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-1.html">&nbsp;Find a car</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Lorem ipsum</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Conse ctetur</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Pellentesque</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Aliquam congue</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Mauris accum</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Mctetur</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Do eiusmod</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Incididunt ut</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Et dolore</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Ut enim ad minim</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-2.html">&nbsp;Used cars</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-3.html">&nbsp;New cars</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-4.html">&nbsp;Contacts</option>
+        </select>
+      </nav>
+      <form id="search" action="search.php" method="GET" accept-charset="utf-8">
+        <input type="text" name="s">
+        <a onclick="document.getElementById('search').submit()">
+          <div class="search_icon"></div>
+        </a>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div id="stuck_container" class="isStuck"
+       style="top: 0px; visibility: hidden; position: fixed; width: 100%; margin-top: 0px;">
+    <div class="width-wrapper">
+      <nav>
+        <ul class="sf-menu sf-js-enabled sf-arrows">
+          <li class="current"><a href="index.html">Home</a></li>
+          <li class=""><a href="index-1.html" class="sf-with-ul">Find a car</a>
+            <ul class="sub-menu" style="display: none;">
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#" class="sf-with-ul">Conse ctetur</a>
+                <ul class="sub-menu" style="display: none;">
+                  <li><a href="#">Pellentesque</a></li>
+                  <li><a href="#">Aliquam congue</a></li>
+                  <li><a href="#">Mauris accum</a></li>
+                  <li><a href="#">Mctetur</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Do eiusmod</a></li>
+              <li><a href="#">Incididunt ut</a></li>
+              <li><a href="#">Et dolore</a></li>
+              <li><a href="#">Ut enim ad minim</a></li>
+            </ul>
+          </li>
+          <li><a href="index-2.html">Used cars</a></li>
+          <li><a href="index-3.html">New cars</a></li>
+          <li><a href="index-4.html">Contacts</a></li>
+        </ul>
+        <select class="select-menu sf-menu sf-js-enabled sf-arrows" style="display: inline-block;">
+          <option value="#">Navigate to...</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index.html">&nbsp;Home</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-1.html">&nbsp;Find a car</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Lorem ipsum</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Conse ctetur</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Pellentesque</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Aliquam congue</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Mauris accum</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">––&nbsp;Mctetur</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Do eiusmod</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Incididunt ut</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Et dolore</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/#">–&nbsp;Ut enim ad minim</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-2.html">&nbsp;Used cars</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-3.html">&nbsp;New cars</option>
+          <option value="https://livedemo00.template-help.com/wt_52302/index-4.html">&nbsp;Contacts</option>
+        </select>
+      </nav>
+      <form id="search" action="search.php" method="GET" accept-charset="utf-8">
+        <input type="text" name="s">
+        <a onclick="document.getElementById('search').submit()">
+          <div class="search_icon"></div>
+        </a>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+<footer id="footer">
+  <div class="width-wrapper width-wrapper__inset1 width-wrapper__inset2">
+    <div class="wrapper4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box2">
+              <h5>Cars for sale</h5>
+              <ul class="list1">
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;"><a href="#">Used cars for sale</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;"><a href="#">Second hand cars for sale</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;"><a href="#">New cars for sale</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;"><a href="#">Special Offers</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;"><a href="#">Compare Cars</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box2">
+              <h5>Car research</h5>
+              <ul class="list1">
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;"><a href="#">Research Cars</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;"><a href="#">Car Valuations</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;"><a href="#">Car Finance</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;"><a href="#">Car Insurance</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;"><a href="#">Car Comparisons</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeIn;"><a href="#">Car Facts</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.7s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.7s; animation-name: fadeIn;"><a href="#">History Reports</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box2">
+              <h5>News &amp; Reviews</h5>
+              <ul class="list1">
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;"><a href="#">Car News</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;"><a href="#">Car Reviews</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;"><a href="#">Car Videos</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;"><a href="#">Car Advice</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;"><a href="#">New Car Calendar</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box2">
+              <h5>Categories</h5>
+              <ul class="list1">
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;"><a href="#">New cars</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;"><a href="#">Bikes</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;"><a href="#">Boats</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;"><a href="#">Trucks</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;"><a href="#">Caravans</a></li>
+                <li class="wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeIn;"><a href="#">Machinery</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper5">
+    <div class="width-wrapper width-wrapper__inset1 width-wrapper__inset3">
+      <div class="container">
+        <div class="row">
+          <div class="grid_12">
+            <div class="privacy-block wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
+              <a href="index.html">Car sell</a> © <span id="copyright-year">2021</span>. <a href="index-5.html">Privacy policy</a>
+              <!--{%FOOTER_LINK} -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
